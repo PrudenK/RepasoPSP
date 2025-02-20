@@ -18,6 +18,7 @@ public class Mesa {
     public synchronized void cogerTenedores(int comensal){
         while(tenedores[tenedorIzquierdo(comensal)] || tenedores[tenedorDerecho(comensal)]){
             try {
+
                 wait();
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);

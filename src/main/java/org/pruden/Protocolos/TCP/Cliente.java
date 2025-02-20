@@ -19,19 +19,12 @@ public class Cliente {
     public static void main(String[] args) {
         try{
             Socket sCliente = new Socket(Host, Puerto);
-
             System.out.println("Vamos a enviar una persona al servidor");
-
             System.out.println("Introduce su nombre: ");
-
             String nombre = sc.nextLine();
-
             System.out.println("Introduce su edad: ");
-
             int edad = sc.nextInt();
-
             Persona persona = new Persona(nombre, edad);
-
             System.out.println("\nEnviando objeto persona al servidor...\n");
 
             pausa();
@@ -45,9 +38,7 @@ public class Cliente {
             pausa();
 
             ObjectInputStream recibirPersona = new ObjectInputStream(sCliente.getInputStream());
-
             Persona personaRecibida = (Persona) recibirPersona.readObject();
-
             System.out.println("Persona modificada: "+personaRecibida);
 
             pausa();
